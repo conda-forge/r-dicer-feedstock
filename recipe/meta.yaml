@@ -1,4 +1,4 @@
-{% set version = '1.2.2' %}
+{% set version = "2.0.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/diceR_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/diceR/diceR_{{ version }}.tar.gz
-  sha256: 220a1a4fd6174ffce964bfe9b1604b637177610dc72775f6a7e235dc49b0adca
+  sha256: ad43e081a737f29fd38420301c22e6a66a79e3d89bf539ff6421cc4fd68cf188
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   rpaths:
     - lib/R/lib/
@@ -83,15 +83,11 @@ test:
 about:
   home: https://github.com/AlineTalhouk/diceR/, https://alinetalhouk.github.io/diceR/
   license: MIT
-  summary: Performs cluster analysis using an ensemble clustering framework, Chiu & Talhouk (2018)
-    <doi:10.1186/s12859-017-1996-y>.  Results from a diverse set of algorithms are pooled
-    together using methods such as majority voting, K-Modes, LinkCluE, and CSPA. There
-    are options to compare cluster assignments across algorithms using internal and
-    external indices, visualizations such as heatmaps, and significance testing for
-    the existence of clusters.
+  summary: Performs cluster analysis using an ensemble clustering framework, Chiu & Talhouk (2018) <doi:10.1186/s12859-017-1996-y>.  Results from a diverse set of algorithms are pooled together using methods such as majority voting, K-Modes, LinkCluE, and CSPA. There are options to compare cluster assignments across algorithms
+    using internal and external indices, visualizations such as heatmaps, and significance testing for the existence of clusters.
   license_family: MIT
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/MIT'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
     - LICENSE
 
 extra:
