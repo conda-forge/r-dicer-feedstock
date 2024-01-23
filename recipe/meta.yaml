@@ -1,4 +1,4 @@
-{% set version = "2.1.0" %}
+{% set version = "2.2.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/diceR_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/diceR/diceR_{{ version }}.tar.gz
-  sha256: a91e07119ceda74cd9de317354c838a2decb880d42f293afe74af010d2533432
+  sha256: 5580e3a05e539a88e20d50629909aeb462be8bffa16768c01f9126c83b0fcbdd
 
 build:
   merge_build_host: true  # [win]
@@ -33,46 +33,46 @@ requirements:
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
+    - r-nmf
+    - r-rankaggreg
+    - r-rcpp
     - r-abind
     - r-assertthat
+    - r-clvalid
     - r-class
     - r-clue
     - r-clustersim
     - r-clv
-    - r-clvalid
     - r-dplyr >=0.7.5
     - r-ggplot2
     - r-infotheo
     - r-klar
     - r-magrittr
     - r-mclust
-    - r-nmf
     - r-purrr >=0.2.3
-    - r-rankaggreg
-    - r-rcpp
     - r-stringr
     - r-tidyr
     - r-yardstick
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
+    - r-nmf
+    - r-rankaggreg
+    - r-rcpp
     - r-abind
     - r-assertthat
+    - r-clvalid
     - r-class
     - r-clue
     - r-clustersim
     - r-clv
-    - r-clvalid
     - r-dplyr >=0.7.5
     - r-ggplot2
     - r-infotheo
     - r-klar
     - r-magrittr
     - r-mclust
-    - r-nmf
     - r-purrr >=0.2.3
-    - r-rankaggreg
-    - r-rcpp
     - r-stringr
     - r-tidyr
     - r-yardstick
