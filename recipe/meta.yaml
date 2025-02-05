@@ -1,4 +1,4 @@
-{% set version = "2.2.0" %}
+{% set version = "3.0.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/diceR_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/diceR/diceR_{{ version }}.tar.gz
-  sha256: 5580e3a05e539a88e20d50629909aeb462be8bffa16768c01f9126c83b0fcbdd
+  sha256: 8ca87bf3a19e06c51cdc615e71c94a76d2c2b30c5ae8f593a711d0171960afa4
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
