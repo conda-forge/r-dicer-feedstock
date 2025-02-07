@@ -33,7 +33,6 @@ requirements:
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
-    - r-nmf
     - r-rankaggreg
     - r-rcpp
     - r-abind
@@ -41,7 +40,7 @@ requirements:
     - r-clvalid
     - r-class
     - r-clue
-    - r-clustersim
+    - r-clustercrit
     - r-clv
     - r-dplyr >=0.7.5
     - r-ggplot2
@@ -49,13 +48,13 @@ requirements:
     - r-klar
     - r-magrittr
     - r-mclust
+    - r-pheatmap
     - r-purrr >=0.2.3
     - r-stringr
     - r-tidyr
     - r-yardstick
   run:
     - r-base
-    - r-nmf
     - r-rankaggreg
     - r-rcpp
     - r-abind
@@ -63,7 +62,7 @@ requirements:
     - r-clvalid
     - r-class
     - r-clue
-    - r-clustersim
+    - r-clustercrit
     - r-clv
     - r-dplyr >=0.7.5
     - r-ggplot2
@@ -71,6 +70,7 @@ requirements:
     - r-klar
     - r-magrittr
     - r-mclust
+    - r-pheatmap
     - r-purrr >=0.2.3
     - r-stringr
     - r-tidyr
