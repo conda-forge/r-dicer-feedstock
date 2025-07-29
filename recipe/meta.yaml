@@ -1,4 +1,4 @@
-{% set version = "3.0.0" %}
+{% set version = "3.1.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,13 +9,17 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/diceR_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/diceR/diceR_{{ version }}.tar.gz
-  sha256: 8ca87bf3a19e06c51cdc615e71c94a76d2c2b30c5ae8f593a711d0171960afa4
+  sha256: 7ad6e33dee6bc9e3e50365242f566a209c47f22f866b533127ef78f5115d734d
 
 build:
   number: 0
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -41,7 +45,6 @@ requirements:
     - r-class
     - r-clue
     - r-clustercrit
-    - r-clv
     - r-dplyr >=0.7.5
     - r-ggplot2
     - r-infotheo
@@ -63,7 +66,6 @@ requirements:
     - r-class
     - r-clue
     - r-clustercrit
-    - r-clv
     - r-dplyr >=0.7.5
     - r-ggplot2
     - r-infotheo
