@@ -16,6 +16,10 @@ build:
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -41,7 +45,6 @@ requirements:
     - r-class
     - r-clue
     - r-clustercrit
-    - r-clv
     - r-dplyr >=0.7.5
     - r-ggplot2
     - r-infotheo
@@ -63,7 +66,6 @@ requirements:
     - r-class
     - r-clue
     - r-clustercrit
-    - r-clv
     - r-dplyr >=0.7.5
     - r-ggplot2
     - r-infotheo
